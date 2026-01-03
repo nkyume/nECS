@@ -35,7 +35,7 @@ void ecs_vec_init(ecs_vec_t *v, size_t element_size, uint32_t initial_cap);
 void ecs_vec_fini(ecs_vec_t *v);
 
 /**
- * Increase size of the vector.
+ * Increase size of a vector.
  *
  * @param v Pointer to the vector.
  * @param new_cap new capacity of the vector.
@@ -45,14 +45,14 @@ void ecs_vec_fini(ecs_vec_t *v);
 void ecs_vec_grow(ecs_vec_t *v, uint32_t new_cap);
 
 /**
- * Change size of the vector to 0;
+ * Change size of a vector to 0;
  *
  * @param v Pointer to the vector.
  */
 void ecs_vec_clear(ecs_vec_t *v);
 
 /**
- * Create element in vector.
+ * Create new element.
  * Increase size by 1.
  *
  * @param v Pointer to the vector
@@ -64,6 +64,7 @@ void *ecs_vec_append(ecs_vec_t *v);
  * Get raw pointer to vector data.
  *
  * @param v pointer to the vector.
+ * @return Pointer to internal data buffer.
  *
  * @note The retured pointer is owned by the vector.
  * @note It becomes invalid after any modifying operation.
