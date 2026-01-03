@@ -53,10 +53,11 @@ void ecs_vec_clear(ecs_vec_t *v);
 
 /**
  * Create new element.
- * Increase size by 1.
  *
  * @param v Pointer to the vector
  * @return Returns pointer to newly created element.
+ *
+ * @warning Returned pointer becomes invalid if the vector is modified.
  */
 void *ecs_vec_append(ecs_vec_t *v);
 
@@ -74,9 +75,9 @@ void *ecs_vec_append(ecs_vec_t *v);
 void *ecs_vec_data(const ecs_vec_t *v);
 
 /**
- * Get pointer to and element at index.
+ * Get pointer to an element at index.
  *
- * @param v pointer to the vector.
+ * @param v Pointer to the vector.
  * @param index Index of the element (0 <= index < size).
  * @return Returns pointer to element at the index.
  *
